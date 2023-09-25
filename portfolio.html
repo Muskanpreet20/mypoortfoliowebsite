@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include the Vue.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+    <script src="main.js"></script>
+    <script src="router.js"></script>
+
+    <style>
+        /* Add custom styles for improved design */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Portfolio Page */
+        #portfolio {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        #portfolio h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #portfolio p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .project {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="getintouch.html">Get in Touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portfolio Page with Vue.js -->
+    <section id="portfolio">
+        <h2>My Portfolio</h2>
+        <p>Welcome to my portfolio page, where I showcase some of my recent projects and work. Feel free to explore and get inspired!</p>
+
+        <!-- Vue component for displaying projects -->
+        <div id="app">
+            <project-component v-for="project in projects" :key="project.id" :project="project"></project-component>
+        </div>
+    </section>
+
+    <!-- Define a Vue component for displaying individual projects -->
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    projects: [
+                        {
+                            id: 1,
+                            title: "Todo App",
+                            description: "I developed a feature-rich Todo application that helps users stay organized and manage tasks efficiently. It includes features like task prioritization, due dates, and task categorization.",
+                        },
+                        {
+                            id: 2,
+                            title: "Fashion Designer Hub Website",
+                            description: " I contributed to the creation of a website for fashion designers to showcase their portfolios, connect with clients, and explore the latest fashion trends. This project involved front-end development and user interface design.",
+                        },
+                        {
+                            id: 3,
+                            title: "Game Project",
+                            description: "I worked on a game development project where I contributed to the development of an interactive 2D game. My role involved coding game mechanics, implementing character movement, and creating engaging gameplay experiences.",
+                        },
+                        {
+                            id: 4,
+                            title: "E-commerce Website Redesign",
+                            description: "I led the redesign of an e-commerce website, enhancing the user experience and improving the overall aesthetics. The project resulted in increased user engagement and higher conversion rates.",
+                        },
+                        {
+                            id: 5,
+                            title: "Blog Platform",
+                            description: "I built a blog platform from scratch, allowing users to create, edit, and publish blog posts. The platform features a user-friendly interface and integrates with social media for easy content sharing.",
+                        },
+                        {
+                            id: 6,
+                            title: "Responsive Web Design Project",
+                            description: "I designed and developed a responsive website that adapts seamlessly to various screen sizes and devices. This project showcased my skills in responsive design and cross-browser compatibility.",
+                        },
+                        {
+                            id: 7,
+                            title: "Data Visualization Dashboard",
+                            description: "I created a data visualization dashboard for a real-time data monitoring application. The dashboard displays critical data metrics and trends in an easily digestible format, helping users make informed decisions.",
+                        },
+                    ]
+                };
+            }
+        });
+
+        app.component('project-component', {
+            props: ['project'],
+            template: `
+                <div class="project">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                </div>
+            `
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>

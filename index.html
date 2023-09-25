@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan - Learning Summary Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include the Vue.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+
+    <style>
+        /* Add custom styles for improved design */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        header ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Home Page */
+        #home {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .home-intro h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .home-intro h3 {
+            font-size: 24px;
+            color: #777;
+        }
+
+        .home-summary p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+
+        .home-summary ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .home-cta {
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        /* New styles for animation and Read More */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .read-more-link {
+            cursor: pointer;
+            color: #007BFF;
+            text-decoration: underline;
+        }
+
+        .read-more-content {
+            display: none;
+        }
+
+        .read-more-content.active {
+            display: block;
+        }
+    
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="getintouch.html">Get in Touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home">
+        <div class="home-content">
+            <div class="home-intro">
+                <h1>Hello, I'm Muskan</h1>
+                <h3>Year 1 | Bachelors of Information Technology</h3>
+            </div>
+            <div class="home-summary">
+                <p>Welcome to my journey in the world of Information Technology. As a Year 1 student, I'm building a strong foundation in this dynamic field.</p>
+                <p>Here are some of the skills and qualities that define me:</p>
+                <ul>
+                    <li>HTML & CSS Proficiency</li>
+                    <li>Basic JavaScript Knowledge</li>
+                    <li>Problem-Solving Skills</li>
+                    <li>Attention to Detail</li>
+                    <li>Effective Communication</li>
+                </ul>
+            </div>
+        </div>
+        <div class="home-cta">
+            <p>Ready to explore more about my journey? Feel free to check out my portfolio and connect with me!</p>
+            <a href="portfolio.html" class="btn">Explore Portfolio</a>
+        </div>
+    </section>
+
+    <!-- Include the Vue.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+    <!-- Include your Vue app and components here -->
+    <script src="main.js"></script>
+</body>
+</html>

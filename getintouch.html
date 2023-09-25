@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan - Get in Touch</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <!-- Include the Vue.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+
+<script src = "main.js"></script>
+<script src = "router.js"></script>
+
+</head>
+<body>
+    <!-- Navigation (reuse the same navigation menu) -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="getintouch.html">Get in Touch</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+
+        /* Add custom styles for improved design */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+    
+    </style>
+
+    <!-- Get in Touch Page Content -->
+    <section id="getintouch">
+        <h2>Get in Touch</h2>
+        <p>If you have any questions or would like to connect, feel free to reach out to me using the contact form below:</p>
+
+        <!-- Vue component for the contact form -->
+        <div id="app">
+            <contact-form></contact-form>
+        </div>
+
+        <!-- Contact Information Table -->
+<table>
+    <tr>
+        <th>Name</th>
+        <td class="black-text">Muskanpreet Kaur</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td><a href="mailto:muskkann.20@gmail.com">muskkann.20@gmail.com</a></td>
+    </tr>
+    <tr>
+        <th>Student ID</th>
+        <td class="black-text">s223047441</td>
+    </tr>
+    <tr>
+        <th>LinkedIn</th>
+        <td><a href="https://au.linkedin.com/in/muskanpreet-kaur-574381271">Muskan's LinkedIn</a></td>
+    </tr>
+</table>
+
+
+    <!-- Vue.js code -->
+    <script>
+        const app = Vue.createApp({
+            components: {
+                'contact-form': {
+                    data() {
+                        return {
+                            name: '',
+                            email: '',
+                            message: ''
+                        };
+                    },
+                    methods: {
+                        submitForm() {
+                            // Handle form submission here
+                            alert(`Name: ${this.name}\nEmail: ${this.email}\nMessage: ${this.message}`);
+                            // You can also send the form data to a server using AJAX or fetch
+                        }
+                    },
+                    template: `
+                        <form @submit.prevent="submitForm">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" v-model="name" required>
+
+                            <label for="email">Your Email:</label>
+                            <input type="email" id="email" v-model="email" required>
+
+                            <label for="message">Your Message:</label>
+                            <textarea id="message" v-model="message" rows="4" required></textarea>
+
+                            <button type="submit">Send</button>
+                        </form>
+                    `
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>

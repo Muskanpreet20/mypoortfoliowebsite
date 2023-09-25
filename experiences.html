@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan - Experiences</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <!-- Include the Vue.js library -->
+<script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+<script src = "main.js"></script>
+<script src = "router.js"></script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="getintouch.html">Get in Touch</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+    <style>
+        /* Add custom styles for improved design */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* Navigation */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+    
+        header ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        header li {
+            display: inline;
+            margin: 0 20px;
+        }
+    
+        header a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+    
+        /* Experiences Page */
+        #experiences {
+            padding: 40px 20px;
+            text-align: center;
+        }
+    
+        #experiences h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+    
+        #experiences p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+    
+        /* Academic Achievements */
+        #experiences h3 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    
+        #experiences ul {
+            list-style: none;
+            padding: 0;
+        }
+    
+        #experiences ul li {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    
+        /* Internship */
+        #experiences h3 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    
+        #experiences p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    
+        /* Personal Projects */
+        #experiences h3 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    
+        #experiences ul {
+            list-style: none;
+            padding: 0;
+        }
+    
+        #experiences ul li {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    </style>
+    
+
+    <!-- Experiences Page Content -->
+    <section id="experiences">
+        <h2>My Experiences</h2>
+        <p>Welcome to my experiences page where I'll share some of my academic and personal achievements as a Year 1 student pursuing a Bachelors of Information Technology.</p>
+
+        <!-- Academic Achievements -->
+        <h3>Academic Achievements</h3>
+        <ul>
+            <li v-for="achievement in academicAchievements">
+                <strong>{{ achievement.title }}</strong> - {{ achievement.description }}
+            </li>
+        </ul>
+
+        <!-- Internship -->
+        <h3>Internship</h3>
+        <p>{{ internship.description }}</p>
+
+        <!-- Personal Projects -->
+        <h3>Personal Projects</h3>
+        <ul>
+            <li v-for="project in personalProjects">
+                <strong>{{ project.title }}</strong> - {{ project.description }}
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>If you have any questions or would like to connect, feel free to reach out to me:</p>
+        <ul>
+            <li>Email: muskkann.20@gmail.com</li>
+            <li>LinkedIn: <a href="https://au.linkedin.com/in/muskanpreet-kaur-574381271">Muskan's LinkedIn</a></li>
+        </ul>
+    </footer>
+
+    <!-- Include the Vue.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+    
+    <!-- Define a Vue App -->
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    academicAchievements: [
+                        {
+                            title: 'High GPA',
+                            description: 'Maintained a GPA of 3.9 during my first year of studies.',
+                        },
+                        {
+                            title: 'Top of the Class',
+                            description: 'Ranked among the top 5% of students in my major.',
+                        },
+                    ],
+                    internship: {
+                        title: 'Web Development Intern',
+                        description: 'Gained hands-on experience in HTML, CSS, and JavaScript while assisting with website projects.',
+                    },
+                    personalProjects: [
+                        {
+                            title: 'Portfolio Website',
+                            description: 'Designed and developed my own portfolio website (the one you\'re viewing now).',
+                        },
+                        {
+                            title: 'Online Blog',
+                            description: 'Created a blog where I share insights on web development and programming.',
+                        },
+                    ],
+                };
+            },
+        });
+
+        app.mount('#experiences');
+    </script>
+</body>
+</html>
